@@ -29,7 +29,7 @@
   "data": [
     {
       "name": "table",
-      "url": "../data/radar.csv",
+      "url": "data/radar.csv",
       "format": {"type": "csv"}
     },
     {
