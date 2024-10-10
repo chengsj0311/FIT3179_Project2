@@ -15,7 +15,7 @@
   "width": 360,
   "height": 250,
   "data": {
-    "url": "data/rank.csv",
+    "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/rank.csv",
     "format": {"type": "csv"}
   },
   "transform": [

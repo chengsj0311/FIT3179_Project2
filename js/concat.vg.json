@@ -11,7 +11,7 @@
                 "font": "open sans"
             },
             "data": {
-                "url": "../data/no_of_persons_by_cert.csv"
+                "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/no_of_persons_by_cert.csv"
             },
             "transform": [
                 {
@@ -66,7 +66,7 @@
                 },
                 {
                     "data": {
-                        "url": "../data/no_of_persons_by_cert.csv"
+                        "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/no_of_persons_by_cert.csv"
                     },
                     "transform": [
                         {
@@ -93,7 +93,7 @@
                 },
                 {
                     "data": {
-                        "url": "../data/no_of_persons_by_cert.csv"
+                        "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/no_of_persons_by_cert.csv"
                     },
                     "transform": [
                         {
@@ -124,7 +124,7 @@
                 },
                 {
                     "data": {
-                        "url": "../data/no_of_persons_by_cert.csv"
+                        "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/no_of_persons_by_cert.csv"
                     },
                     "transform": [
                         {
@@ -200,7 +200,7 @@
                 "font": "open sans"
             },
             "data": {
-                "url": "../data/no_of_persons_by_cert.csv"
+                "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/no_of_persons_by_cert.csv"
             },
             "layer": [
                 {
