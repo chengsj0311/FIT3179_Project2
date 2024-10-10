@@ -107,7 +107,7 @@
                     "lookup": "properties.name",
                     "from": {
                         "data": {
-                            "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/value_of_intermediate_input.csvdata/value_of_intermediate_input.csv"
+                            "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/value_of_intermediate_input.csv"
                         },
                         "key": "State",
                         "fields": [

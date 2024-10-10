@@ -107,7 +107,7 @@
                     "lookup": "properties.name",
                     "from": {
                         "data": {
-                            "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/value_of_gross_output.csvdata/value_of_gross_output.csv"
+                            "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/value_of_gross_output.csv"
                         },
                         "key": "State",
                         "fields": [

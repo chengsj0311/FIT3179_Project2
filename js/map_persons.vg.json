@@ -107,7 +107,7 @@
           "lookup": "properties.name",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/no_of_persons_engaged.csvdata/no_of_persons_engaged.csv"
+              "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/no_of_persons_engaged.csv"
             },
             "key": "State",
             "fields": [

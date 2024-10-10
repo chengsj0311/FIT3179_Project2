@@ -107,7 +107,7 @@
                     "lookup": "properties.name",
                     "from": {
                         "data": {
-                            "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/saleries_wages.csvdata/saleries_wages.csv"
+                            "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/saleries_wages.csv"
                         },
                         "key": "State",
                         "fields": [
