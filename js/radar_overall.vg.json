@@ -1,0 +1,336 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "title": {
+    "text": ["Calculated Average Grow Rate by Activity"],
+    "dy": -15,
+    "dx": -30,
+    "orient": "top",
+    "fontSize": 18,
+    "font": "open sans"
+  },
+  "width": 400,
+  "height": 320,
+  "padding": {
+    "top": 80,
+    "left": 100,
+    "bottom": 100,
+    "right": 80
+  },
+  "autosize": {"type": "none", "contains": "padding"},
+
+  "signals": [
+    {"name": "radius", "update": "width / 2"},
+    {"name": "radius_8", "update": "radius * 0.8"},
+    {"name": "radius_6", "update": "radius * 0.6"},
+    {"name": "radius_4", "update": "radius * 0.4"},
+    {"name": "radius_2", "update": "radius * 0.2"}
+  ],
+
+  "data": [
+    {
+      "name": "table",
+      "url": "../data/radar.csv",
+      "format": {"type": "csv"}
+    },
+    {
+      "name": "keys",
+      "source": "table",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["Activity"]
+        }
+      ]
+    },
+    {
+      "name": "radius-labels",
+      "values": [
+        { "value": 1.52, "radius": "radius_2" },
+        { "value": 3.04, "radius": "radius_4" },
+        { "value": 4.56, "radius": "radius_6" },
+        { "value": 6.08, "radius": "radius_8" },
+        { "value": 7.60, "radius": "radius" }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "angular",
+      "type": "point",
+      "range": {"signal": "[-PI, PI]"},
+      "padding": 0.5,
+      "domain": {"data": "table", "field": "Activity"}
+    },
+    {
+      "name": "radial",
+      "type": "linear",
+      "range": {"signal": "[0, radius]"},
+      "zero": true,
+      "nice": false,
+      "domain": {"data": "table", "field": "CAGR"},
+      "domainMin": 0
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "table", "field": "Category"},
+      "range": ["#1f77b4","#ff7f0e","#2ca02c"]
+    }
+  ],
+
+  "encode": {
+    "enter": {
+      "x": {"signal": "radius"},
+      "y": {"signal": "radius"}
+    }
+  },
+
+  "marks": [
+    {
+      "type": "group",
+      "name": "categories",
+      "zindex": 1,
+      "from": {
+        "facet": {"data": "table", "name": "facet", "groupby": ["Category"]}
+      },
+      "marks": [
+        {
+          "type": "line",
+          "name": "category-line",
+          "from": {"data": "facet"},
+          "encode": {
+            "enter": {
+              "interpolate": {"value": "linear-closed"},
+              "x": {"signal": "scale('radial', datum.CAGR) * cos(scale('angular', datum.Activity))"},
+              "y": {"signal": "scale('radial', datum.CAGR) * sin(scale('angular', datum.Activity))"},
+              "stroke": {"scale": "color", "field": "Category"},
+              "strokeWidth": {"value": 1},
+              "fill": {"scale": "color", "field": "Category"},
+              "fillOpacity": {"value": 0.1}
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid",
+      "from": {"data": "keys"},
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": {"value": 0},
+          "y": {"value": 0},
+          "x2": {"signal": "radius * cos(scale('angular', datum.Activity))"},
+          "y2": {"signal": "radius * sin(scale('angular', datum.Activity))"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid-8",
+      "from": {"data": "keys"},
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": {"value": 0},
+          "y": {"value": 0},
+          "x2": {"signal": "radius_8 * cos(scale('angular', datum.Activity))"},
+          "y2": {"signal": "radius_8 * sin(scale('angular', datum.Activity))"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid-6",
+      "from": {"data": "keys"},
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": {"value": 0},
+          "y": {"value": 0},
+          "x2": {"signal": "radius_6 * cos(scale('angular', datum.Activity))"},
+          "y2": {"signal": "radius_6 * sin(scale('angular', datum.Activity))"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid-4",
+      "from": {"data": "keys"},
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": {"value": 0},
+          "y": {"value": 0},
+          "x2": {"signal": "radius_4 * cos(scale('angular', datum.Activity))"},
+          "y2": {"signal": "radius_4 * sin(scale('angular', datum.Activity))"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid-2",
+      "from": {"data": "keys"},
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": {"value": 0},
+          "y": {"value": 0},
+          "x2": {"signal": "radius_2 * cos(scale('angular', datum.Activity))"},
+          "y2": {"signal": "radius_2 * sin(scale('angular', datum.Activity))"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "key-label",
+      "from": {"data": "keys"},
+      "zindex": 1,
+      "encode": {
+        "enter": {
+          "x": {"signal": "(radius + 5) * cos(scale('angular', datum.Activity))"},
+          "y": {"signal": "(radius + 5) * sin(scale('angular', datum.Activity))"},
+          "text": {"field": "Activity"},
+          "align": [
+            {
+              "test": "abs(scale('angular', datum.Activity)) > PI / 2",
+              "value": "right"
+            },
+            {
+              "value": "left"
+            }
+          ],
+          "baseline": [
+            {
+              "test": "scale('angular', datum.Activity) > 0", "value": "top"
+            },
+            {
+              "test": "scale('angular', datum.Activity) == 0", "value": "middle"
+            },
+            {
+              "value": "bottom"
+            }
+          ],
+          "fill": {"value": "black"},
+          "fontWeight": {"value": "bold"},
+          "fontSize": {"value": 10},
+          "lineBreak": {"value": "\\n"}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x2"},
+          "y": {"field": "y2"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line-8",
+      "from": {"data": "radial-grid-8"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x2"},
+          "y": {"field": "y2"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line-6",
+      "from": {"data": "radial-grid-6"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x2"},
+          "y": {"field": "y2"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line-4",
+      "from": {"data": "radial-grid-4"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x2"},
+          "y": {"field": "y2"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line-2",
+      "from": {"data": "radial-grid-2"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x2"},
+          "y": {"field": "y2"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "radius-label",
+      "from": {
+        "data": "radius-labels"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "radius * cos(scale('angular', datum.key))"
+          },
+          "y": {
+            "signal": "scale('radial', datum.value-0.2) * sin(PI / 2)"
+          },
+          "text": {
+            "signal": "datum.value"
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fill": {
+            "value": "black"
+          },
+          "fontSize": {
+            "value": 10
+          }
+        }
+      }
+    }
+  ]
+}

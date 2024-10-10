@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": ["Top 5 Food and Beverage Companies"],
+    "fontSize": 18,
+    "font": "open sans",
+    "dy": -15
+  },
+  "padding": {
+    "left": 0,
+    "top": 25,
+    "right": 0,
+    "bottom": 0
+  },
+  "width": 360,
+  "height": 250,
+  "data": {
+    "url": "../data/rank.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+    {"filter": "datum.Rank <= 5"}
+  ],
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "sort": ["2024", "2023", "2022", "2021", "2020"],
+      "axis": {"labelAngle": 0, "title": "Year", "values": ["2020", "2021", "2022", "2023", "2024"]}
+    },
+    "y": {
+      "field": "Rank",
+      "type": "quantitative",
+      "sort": "descending",
+      "scale": {"domain": [0.5, 5.5]},
+      "axis": {"title": "Rank", "values": [1, 2, 3, 4, 5]}
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "color": {
+          "field": "Company",
+          "bandPosition": 0,
+          "scale": {
+            "range": [
+              "#4e79a7",
+              "#edc948",
+              "#f28e2b",
+              "#c9c776",
+              "#bab0ac"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {"field": "Company", "type": "nominal"},
+          {"field": "Rank", "type": "quantitative"},
+          {"field": "Year", "type": "ordinal"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "image", "width": 35, "height": 35},
+      "encoding": {
+        "url": {"field": "img", "type": "nominal"}
+      }
+    }
+  ]
+}

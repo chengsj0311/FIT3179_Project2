@@ -1,0 +1,75 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 250,
+    "title": {
+        "text": "Number of persons engaged by Certification",
+        "dy": -15,  
+        "font": "open sans"
+    },
+    "data": {
+        "url": "../data/no_of_persons_by_cert.csv"
+    },
+    "layer": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "no_of_persons",
+                    "type": "quantitative",
+                    "title": "Number of persons",
+                    "axis": {
+                        "format": "~s"
+                    }
+                },
+                "y": {
+                    "field": "certificate",
+                    "type": "nominal",
+                    "sort": "-x"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum.certificate === 'SPM'",
+                        "value": 1
+                    },
+                    "value": 0.3
+                },
+                "color": {
+                    "field": "Gender",
+                    "sort": "descending",
+                    "legend": null
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "baseline": "middle",
+                "dx": 18    
+            },
+            "encoding": {
+                "x": {
+                    "aggregate": "sum",
+                    "field": "no_of_persons",
+                    "stack":"normalize",
+                    "bandPosition": 0.5
+                },
+                "y": {
+                    "field": "certificate",
+                    "sort": "-x"
+                },
+                "text": {
+                    "aggregate": "sum",
+                    "field": "no_of_persons",
+                    "type": "quantitative",
+                    "format": ","
+                }
+            }
+        }
+    ],
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}

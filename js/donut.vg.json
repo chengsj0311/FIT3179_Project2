@@ -1,0 +1,185 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 300,
+    "height": 250,
+    "title": {
+        "text": "Number of persons engaged by Gender",
+        "dy": -15,  
+        "font": "open sans"
+    },
+    "data": {
+        "url": "../data/no_of_persons_by_cert.csv"
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "no_of_persons",
+                    "as": "total_persons_by_gender"
+                }
+            ],
+            "groupby": [
+                "Gender"
+            ]
+        }
+    ],
+    "layer": [
+        {
+            "params": [
+                {
+                    "name": "select",
+                    "select": {
+                        "type": "point",
+                        "fields": [
+                            "Gender"
+                        ]
+                    }
+                }
+            ],
+            "mark": {
+                "type": "arc",
+                "innerRadius": 50,
+                "cursor": "pointer"
+            },
+            "encoding": {
+                "fillOpacity": {
+                    "condition": {
+                        "param": "select",
+                        "value": 1
+                    },
+                    "value": 0.5
+                },
+                "theta": {
+                    "field": "total_persons_by_gender",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Gender",
+                    "type": "nominal",
+                    "legend": null
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "../data/no_of_persons_by_cert.csv"
+            },
+            "transform": [
+                {
+                    "aggregate": [
+                        {
+                            "op": "sum",
+                            "field": "no_of_persons",
+                            "as": "total_persons"
+                        }
+                    ]
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "dx": 0,
+                "dy": 15
+            },
+            "encoding": {
+                "text": {
+                    "field": "total_persons"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "../data/no_of_persons_by_cert.csv"
+            },
+            "transform": [
+                {
+                    "filter": "datum.Gender === 'Male'"
+                },
+                {
+                    "aggregate": [
+                        {
+                            "op": "sum",
+                            "field": "no_of_persons",
+                            "as": "total_persons"
+                        }
+                    ]
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "dx": -85,
+                "dy": 15,
+                "color": "#ffffff"
+            },
+            "encoding": {
+                "text": {
+                    "field": "total_persons"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "../data/no_of_persons_by_cert.csv"
+            },
+            "transform": [
+                {
+                    "filter": "datum.Gender === 'Female'"
+                },
+                {
+                    "aggregate": [
+                        {
+                            "op": "sum",
+                            "field": "no_of_persons",
+                            "as": "total_persons"
+                        }
+                    ]
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "fontSize": 12,
+                "dx": 85,
+                "dy": 15,
+                "color": "#ffffff"
+            },
+            "encoding": {
+                "text": {
+                    "field": "total_persons"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "fontSize": 16,
+                "dx": 0,
+                "dy": -5,
+                "text": "Total"
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "fontSize": 16,
+                "color": "#ffffff",
+                "dx": -85,
+                "dy": -5,
+                "text": "Male"
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "color": "#ffffff",
+                "fontSize": 16,
+                "dx": 85,
+                "dy": -5,
+                "text": "Female"
+            }
+        }
+    ],
+    "config": {
+        "font": "open sans"
+    }
+}

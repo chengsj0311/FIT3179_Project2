@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>FIT3179 Project 2</title>
+		<!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+		<script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+		<!-- Import pure.css -->
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+			integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ"
+			crossorigin="anonymous"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!-- Google font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- CSS file -->
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+
+		<!-- JS file -->
+		<script src="js/vega_lite_vis.js"></script>
+	</head>
+
+	<body>
+		<div class="page">
+			<div class="pure-g">
+				<div class="pure-u-1-1">
+					<h1>FOOD AND BEVERAGE SERVICE IN MALAYSIA</h1>
+					<div class="justify-container">
+						<p>
+							This visualization highlights key statistics for the year 2022,
+							comparing them with those from 2015 in Malaysia. The data comes
+							from the Department of Statistics Malaysia (DOSM), specifically
+							from the Economic Census 2023 Food and Beverage Services and the
+							Economic Census 2016 Food and Beverage Services. This
+							visualization offers valuable insights into the growth and changes
+							in Malaysia's food and beverage services sector between 2015 and
+							2022. It enables stakeholders to analyze industry trends, guiding
+							informed decisions for future development and investment.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="pure-g">
+				<div class="pure-u-1-1">
+					<h2>Performance of Food and Beverage Service</h2>
+				</div>
+			</div>
+
+			<div class="pure-g">
+				<div class="pure-u-1-1">
+					<div class="four-card-container">
+						<div class="card">
+							<img
+								class="card-img"
+								src="https://cdn-icons-png.flaticon.com/512/9101/9101983.png"
+								alt=""
+							/>
+							<div class="card-text-container">
+								<p class="card-title">Number of Establishments</p>
+								<p class="card-text">
+									2022: 136453<br />2015: 167490<br />CAGR: -2.9%
+								</p>
+							</div>
+						</div>
+						<div class="card">
+							<img
+								class="card-img"
+								src="https://cdn-icons-png.flaticon.com/512/2037/2037119.png"
+								alt=""
+							/>
+							<div class="card-text-container">
+								<p class="card-title">Value of Gross Output</p>
+								<p class="card-text">
+									2022: RM99.0B<br />2015: RM66.4B<br />CAGR: 5.9%
+								</p>
+							</div>
+						</div>
+						<div class="card">
+							<img
+								class="card-img"
+								src="https://cdn-icons-png.flaticon.com/512/8860/8860236.png"
+								alt=""
+							/>
+							<div class="card-text-container">
+								<p class="card-title">Value of Intermediate Input</p>
+								<p class="card-text">
+									2022: RM55.1B<br />2015: RM38.4B<br />CAGR: 5.3%
+								</p>
+							</div>
+						</div>
+						<div class="card">
+							<img
+								class="card-img"
+								src="https://cdn-icons-png.flaticon.com/512/8653/8653187.png"
+							/>
+							<div class="card-text-container">
+								<p class="card-title">Value Added</p>
+								<p class="card-text">
+									2022: Rm43.8B<br />2015: RM28.0B<br />CAGR: 6.6%
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="pure-u-1-1">
+					<div class="three-card-container">
+						<div class="card">
+							<img
+								class="card-img"
+								src="https://cdn-icons-png.flaticon.com/512/3490/3490980.png"
+							/>
+							<div class="card-text-container">
+								<p class="card-title">Value of Fixed Assets</p>
+								<p class="card-text">
+									2022: RM12.6B<br />2015: RM9.5B<br />CAGR: 4.1%
+								</p>
+							</div>
+						</div>
+
+						<div class="card">
+							<img
+								class="card-img"
+								src="https://cdn-icons-png.flaticon.com/512/10695/10695051.png"
+							/>
+							<div class="card-text-container">
+								<p class="card-title">Saleries and Wages</p>
+								<p class="card-text">
+									2022: RM15.5B<br />2015: RM9.7B<br />CAGR: 7.0%
+								</p>
+							</div>
+						</div>
+						<div class="card">
+							<img
+								class="card-img"
+								src="https://static.vecteezy.com/system/resources/previews/019/989/678/original/employee-icon-sign-symbol-graphic-illustration-vector.jpg"
+							/>
+							<div class="card-text-container">
+								<p class="card-title">Number of Persons Engaged</p>
+								<p class="card-text">
+									2022: 1079843<br />2015: 891616<br />CAGR: 2.8%
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="pure-g">
+				<div class="pure-u-1-2">
+					<div id="radar-chart" class="vis-container"></div>
+					<select id="radar-select">
+						<option value="js/radar_overall.vg.json">All</option>
+						<option value="js/radar_food.vg.json">Food</option>
+						<option value="js/radar_event.vg.json">Event</option>
+						<option value="js/radar_beverage.vg.json">Beverage</option>
+					</select>
+				</div>
+
+				<div class="pure-u-1-2">
+					<div class="description-right justify-container">
+						<p class="text">
+							The number of establishments in 2022 declined by 2.9% with 136453
+							establishments compared to 167490 establishments in 2015. This
+							number of decrease is due to the outbreak of Covid-19 that hit the
+							country starting in 2020. However, the other factor has positive
+							growth in the food and beverage service sector. The radar chart
+							besides show the calculated average growth rate of each sector in
+							the food and beverage service industry except the number of
+							establishments by activity. The activity included
+							<span class="food">food services</span>,
+							<span class="event">event catering services</span> and
+							<span class="beverage">beverage services</span>. Overally, the
+							perfomance of these activity can be ordered to
+							<span class="food">food services</span>,
+							<span class="beverage">beverage services</span> and
+							<span class="event">event catering services</span> respectively.
+							There is a option to switch between the radar chart of each
+							activity for detailed information.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="pure-g">
+				<div class="pure-u-1-1">
+					<div id="map" class="vis-container"></div>
+				</div>
+
+				<div class="pure-u-1-1">
+					<label for="map-select">Statistics: </label>
+
+					<select id="map-select">
+						<option value="js/map_establishments.vg.json">
+							Number of Establishments
+						</option>
+						<option value="js/map_gross_output.vg.json">
+							Value of Gross Output
+						</option>
+						<option value="js/map_intermediate_input.vg.json">
+							Value of Intermediate Input
+						</option>
+						<option value="js/map_value_added.vg.json">Value Added</option>
+						<option value="js/map_fixed_assets.vg.json">
+							Value of Fixed Assets
+						</option>
+						<option value="js/map_saleries.vg.json">Saleries and Wages</option>
+						<option value="js/map_persons.vg.json">
+							Number of Persons Engaged
+						</option>
+					</select>
+				</div>
+
+				<div class="pure-u-1-1">
+					<div class="rank-container">
+						<div class="rank-card">
+							<p class="rank-card-title">Number of Establishments</p>
+							<img
+								class="rank-card-img"
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Flag_of_Sabah.svg/2560px-Flag_of_Sabah.svg.png"
+								alt=""
+							/>
+							<p class="rank-card-text">Sabah<br />CAGR: 0.80%</p>
+						</div>
+						<div class="rank-card">
+							<p class="rank-card-title">Value of<br />Gross Output</p>
+							<img
+								class="rank-card-img"
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Flag_of_Selangor.svg/1280px-Flag_of_Selangor.svg.png"
+								alt=""
+							/>
+							<p class="rank-card-text">Selangor<br />CAGR: 11.11%</p>
+						</div>
+						<div class="rank-card">
+							<p class="rank-card-title">Value of<br />Intermediate Input</p>
+							<img
+								class="rank-card-img"
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Putrajaya.svg/1200px-Flag_of_Putrajaya.svg.png"
+								alt=""
+							/>
+							<p class="rank-card-text">Putrajaya<br />CAGR: 7.13%</p>
+						</div>
+						<div class="rank-card">
+							<p class="rank-card-title">Value<br />Added</p>
+							<img
+								class="rank-card-img"
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Flag_of_Selangor.svg/1280px-Flag_of_Selangor.svg.png"
+								alt=""
+							/>
+							<p class="rank-card-text">Selangor<br />CAGR: 12.17%</p>
+						</div>
+						<div class="rank-card">
+							<p class="rank-card-title">Value of<br />Fixed Assets</p>
+							<img
+								class="rank-card-img"
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Flag_of_Selangor.svg/1280px-Flag_of_Selangor.svg.png"
+								alt=""
+							/>
+							<p class="rank-card-text">Selangor<br />CAGR: 17.38%</p>
+						</div>
+						<div class="rank-card">
+							<p class="rank-card-title">Saleries and<br />Wages</p>
+							<img
+								class="rank-card-img"
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Penang_%28Malaysia%29.svg/2560px-Flag_of_Penang_%28Malaysia%29.svg.png"
+								alt=""
+							/>
+							<p class="rank-card-text">Pulau Pinang<br />CAGR: 10.44%</p>
+						</div>
+						<div class="rank-card">
+							<p class="rank-card-title">Number of<br />Persons Engaged</p>
+							<img
+								class="rank-card-img"
+								src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Putrajaya.svg/1200px-Flag_of_Putrajaya.svg.png"
+								alt=""
+							/>
+							<p class="rank-card-text">Putrajaya<br />CAGR: 10.92%</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="pure-g">
+				<div class="pure-u-1-1">
+					<h2>Workers in Food and Beverage Industry and Working Opportunity</h2>
+				</div>
+			</div>
+
+			<div class="pure-g">
+				<div class="pure-u-1-1">
+					<div id="stacked-chart" class="vis-container"></div>
+				</div>
+			</div>
+
+			<div class="pure-g">
+				<div class="pure-u-1-2">
+					<div id="bump-chart" class="vis-container"></div>
+				</div>
+
+				<div class="pure-u-1-2">
+					<div class="description-right justify-container">
+                        <p class="text">
+                            In the food and beverage services industry, the workforce is
+                            predominantly male, with 585,616 male workers compared to 494,227
+                            female workers. A significant portion of the employees in this
+                            sector hold SPM or equivalent qualifications. Out of the 619,793
+                            workers with this level of education, 358,678 are male, while
+                            261,115 are female. The bump chart shows the top 5 food and beverage
+                            company in the world and their historical ranking. These company
+                            lead the global food and beverage industry with their innovative
+                            products and services. Understanding the performance of these key
+                            global players is crucial for anticipating trends in Malaysia’s
+                            domestic market, where local and global brands often intersect."
+                        </p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<div class="footer-container">
+				<p>
+					Author: Cheng Sheng Jie <br>
+					Date: 6-10-202 <br>
+					Source: Department of Statistics Malaysia (DOSM) <br>
+					
+					
+				</p>
+			</div>
+	</body>
+
+
+</html>
