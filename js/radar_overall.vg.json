@@ -29,7 +29,7 @@
   "data": [
     {
       "name": "table",
-      "url": "data/radar.csv",
+      "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/radar.csv",
       "format": {"type": "csv"}
     },
     {
