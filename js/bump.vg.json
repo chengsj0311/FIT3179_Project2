@@ -15,7 +15,7 @@
   "width": 360,
   "height": 250,
   "data": {
-    "url": "../data/rank.csv",
+    "url": "data/rank.csv",
     "format": {"type": "csv"}
   },
   "transform": [
