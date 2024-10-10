@@ -80,7 +80,7 @@
         },
         {
             "data": {
-                "url": "data/neighbour_country.json",
+                "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/neighbour_country.json",
                 "format": {
                     "type": "topojson",
                     "feature": "custom.geo"
@@ -96,7 +96,7 @@
         },
         {
             "data": {
-                "url": "data/malaysia_state.json",
+                "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/malaysia_state.json",
                 "format": {
                     "type": "topojson",
                     "feature": "malaysia.state"
@@ -107,7 +107,7 @@
                     "lookup": "properties.name",
                     "from": {
                         "data": {
-                            "url": "data/no_of_establishments.csv"
+                            "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/no_of_establishments.csv"
                         },
                         "key": "State",
                         "fields": [
