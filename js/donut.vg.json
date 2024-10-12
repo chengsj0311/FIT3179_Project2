@@ -4,7 +4,7 @@
     "height": 250,
     "title": {
         "text": "Number of persons engaged by Gender",
-        "dy": -15,  
+        "dy": -15,
         "font": "open sans"
     },
     "data": {
@@ -60,8 +60,16 @@
                     "legend": null
                 },
                 "tooltip": [
-                    {"field": "Gender", "type": "nominal", "title": "Gender"},
-                    {"field": "total_persons_by_gender", "type": "quantitative", "title": "Total Persons"}
+                    {
+                        "field": "Gender",
+                        "type": "nominal",
+                        "title": "Gender"
+                    },
+                    {
+                        "field": "total_persons_by_gender",
+                        "type": "quantitative",
+                        "title": "Total Persons"
+                    }
                 ]
             }
         },

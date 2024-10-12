@@ -1,190 +1,300 @@
 {
-    "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "title": {
-      "text": ["Calculated Average Grow Rate of Beverage Services"],
-      "fontSize": 16,
-      "dy": -25,
-      "dx": -48,
-      "font": "DM Serif Display",
-      "color": "#5a5857"
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "title": {
+    "text": [
+      "Calculated Average Grow Rate of Beverage Services"
+    ],
+    "fontSize": 16,
+    "dy": -25,
+    "dx": -48,
+    "font": "DM Serif Display",
+    "color": "#5a5857"
   },
   "background": "#FCFAEE",
-    "width": 400,
-    "height": 320,
-    "padding": {
-      "top": 80,
-      "left": 100,
-      "bottom": 100,
-      "right": 80
-    },
-    "autosize": {"type": "none", "contains": "padding"},
-  
-    "signals": [ {"name": "radius", "update": "width / 2"} ],
-  
-    "data": [
-      {
-        "name": "table",
-        "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/radar.csv",
-        "format": {"type": "csv"},
-        "transform": [
-          {
-            "type": "filter",
-            "expr": "datum.Category == 'Beverage services'"
-          }
-        ]
+  "width": 400,
+  "height": 320,
+  "padding": {
+    "top": 80,
+    "left": 100,
+    "bottom": 100,
+    "right": 80
+  },
+  "autosize": {
+    "type": "none",
+    "contains": "padding"
+  },
+  "signals": [
+    {
+      "name": "radius",
+      "update": "width / 2"
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/radar.csv",
+      "format": {
+        "type": "csv"
       },
-      {
-        "name": "keys",
-        "source": "table",
-        "transform": [
-          {
-            "type": "aggregate",
-            "groupby": ["Activity"]
-          }
-        ]
-      }
-    ],
-  
-    "scales": [
-      {
-        "name": "angular",
-        "type": "point",
-        "range": {"signal": "[-PI, PI]"},
-        "padding": 0.5,
-        "domain": {"data": "table", "field": "Activity"}
-      },
-      {
-        "name": "radial",
-        "type": "linear",
-        "range": {"signal": "[0, radius]"},
-        "zero": true,
-        "nice": false,
-        "domain": {"data": "table", "field": "CAGR"},
-        "domainMin": 0
-      },
-      {
-        "name": "color",
-        "type": "ordinal",
-        "domain": {"data": "table", "field": "Category"},
-        "range": ["#fbbb29"]
-      }
-    ],
-  
-    "encode": {
-      "enter": {
-        "x": {"signal": "radius"},
-        "y": {"signal": "radius"}
-      }
-    },
-  
-    "marks": [
-      {
-        "type": "group",
-        "name": "categories",
-        "zindex": 1,
-        "from": {
-          "facet": {"data": "table", "name": "facet", "groupby": ["Category"]}
-        },
-        "marks": [
-          {
-            "type": "line",
-            "name": "category-line",
-            "from": {"data": "facet"},
-            "encode": {
-              "enter": {
-                "interpolate": {"value": "linear-closed"},
-                "x": {"signal": "scale('radial', datum.CAGR) * cos(scale('angular', datum.Activity))"},
-                "y": {"signal": "scale('radial', datum.CAGR) * sin(scale('angular', datum.Activity))"},
-                "stroke": {"scale": "color", "field": "Category"},
-                "strokeWidth": {"value": 1},
-                "fill": {"scale": "color", "field": "Category"},
-                "fillOpacity": {"value": 0.1}
-              }
-            }
-          },
+      "transform": [
         {
-            "type": "text",
-            "name": "value-text",
-            "from": {"data": "category-line"},
-            "encode": {
+          "type": "filter",
+          "expr": "datum.Category == 'Beverage services'"
+        }
+      ]
+    },
+    {
+      "name": "keys",
+      "source": "table",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": [
+            "Activity"
+          ]
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "angular",
+      "type": "point",
+      "range": {
+        "signal": "[-PI, PI]"
+      },
+      "padding": 0.5,
+      "domain": {
+        "data": "table",
+        "field": "Activity"
+      }
+    },
+    {
+      "name": "radial",
+      "type": "linear",
+      "range": {
+        "signal": "[0, radius]"
+      },
+      "zero": true,
+      "nice": false,
+      "domain": {
+        "data": "table",
+        "field": "CAGR"
+      },
+      "domainMin": 0
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {
+        "data": "table",
+        "field": "Category"
+      },
+      "range": [
+        "#fbbb29"
+      ]
+    }
+  ],
+  "encode": {
+    "enter": {
+      "x": {
+        "signal": "radius"
+      },
+      "y": {
+        "signal": "radius"
+      }
+    }
+  },
+  "marks": [
+    {
+      "type": "group",
+      "name": "categories",
+      "zindex": 1,
+      "from": {
+        "facet": {
+          "data": "table",
+          "name": "facet",
+          "groupby": [
+            "Category"
+          ]
+        }
+      },
+      "marks": [
+        {
+          "type": "line",
+          "name": "category-line",
+          "from": {
+            "data": "facet"
+          },
+          "encode": {
             "enter": {
-                "x": {"signal": "datum.x"},
-                "y": {"signal": "datum.y"},
-                "text": {"signal": "datum.datum.CAGR"},
-                "align": {"value": "center"},
-                "baseline": {"value": "middle"},
-                "fill": {"value": "black"}
-                }
-                }
+              "interpolate": {
+                "value": "linear-closed"
+              },
+              "x": {
+                "signal": "scale('radial', datum.CAGR) * cos(scale('angular', datum.Activity))"
+              },
+              "y": {
+                "signal": "scale('radial', datum.CAGR) * sin(scale('angular', datum.Activity))"
+              },
+              "stroke": {
+                "scale": "color",
+                "field": "Category"
+              },
+              "strokeWidth": {
+                "value": 1
+              },
+              "fill": {
+                "scale": "color",
+                "field": "Category"
+              },
+              "fillOpacity": {
+                "value": 0.1
+              }
             }
-        ]
-      },
-      {
-        "type": "rule",
-        "name": "radial-grid",
-        "from": {"data": "keys"},
-        "zindex": 0,
-        "encode": {
-          "enter": {
-            "x": {"value": 0},
-            "y": {"value": 0},
-            "x2": {"signal": "radius * cos(scale('angular', datum.Activity))"},
-            "y2": {"signal": "radius * sin(scale('angular', datum.Activity))"},
-            "stroke": {"value": "lightgray"},
-            "strokeWidth": {"value": 1}
+          }
+        },
+        {
+          "type": "text",
+          "name": "value-text",
+          "from": {
+            "data": "category-line"
+          },
+          "encode": {
+            "enter": {
+              "x": {
+                "signal": "datum.x"
+              },
+              "y": {
+                "signal": "datum.y"
+              },
+              "text": {
+                "signal": "datum.datum.CAGR"
+              },
+              "align": {
+                "value": "center"
+              },
+              "baseline": {
+                "value": "middle"
+              },
+              "fill": {
+                "value": "black"
+              }
+            }
           }
         }
+      ]
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid",
+      "from": {
+        "data": "keys"
       },
-      {
-        "type": "text",
-        "name": "key-label",
-        "from": {"data": "keys"},
-        "zindex": 1,
-        "encode": {
-          "enter": {
-            "x": {"signal": "(radius + 5) * cos(scale('angular', datum.Activity))"},
-            "y": {"signal": "(radius + 5) * sin(scale('angular', datum.Activity))"},
-            "text": {"field": "Activity"},
-            "align": [
-              {
-                "test": "abs(scale('angular', datum.Activity)) > PI / 2",
-                "value": "right"
-              },
-              {
-                "value": "left"
-              }
-            ],
-            "baseline": [
-              {
-                "test": "scale('angular', datum.Activity) > 0", "value": "top"
-              },
-              {
-                "test": "scale('angular', datum.Activity) == 0", "value": "middle"
-              },
-              {
-                "value": "bottom"
-              }
-            ],
-            "fill": {"value": "black"},
-            "fontWeight": {"value": "bold"},
-            "fontSize": {"value": 10},
-            "lineBreak": {"value": "\\n"}
-          }
-        }
-      },
-      {
-        "type": "line",
-        "name": "outer-line",
-        "from": {"data": "radial-grid"},
-        "encode": {
-          "enter": {
-            "interpolate": {"value": "linear-closed"},
-            "x": {"field": "x2"},
-            "y": {"field": "y2"},
-            "stroke": {"value": "lightgray"},
-            "strokeWidth": {"value": 1}
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 0
+          },
+          "y": {
+            "value": 0
+          },
+          "x2": {
+            "signal": "radius * cos(scale('angular', datum.Activity))"
+          },
+          "y2": {
+            "signal": "radius * sin(scale('angular', datum.Activity))"
+          },
+          "stroke": {
+            "value": "lightgray"
+          },
+          "strokeWidth": {
+            "value": 1
           }
         }
       }
-    ]
-  }
+    },
+    {
+      "type": "text",
+      "name": "key-label",
+      "from": {
+        "data": "keys"
+      },
+      "zindex": 1,
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "(radius + 5) * cos(scale('angular', datum.Activity))"
+          },
+          "y": {
+            "signal": "(radius + 5) * sin(scale('angular', datum.Activity))"
+          },
+          "text": {
+            "field": "Activity"
+          },
+          "align": [
+            {
+              "test": "abs(scale('angular', datum.Activity)) > PI / 2",
+              "value": "right"
+            },
+            {
+              "value": "left"
+            }
+          ],
+          "baseline": [
+            {
+              "test": "scale('angular', datum.Activity) > 0",
+              "value": "top"
+            },
+            {
+              "test": "scale('angular', datum.Activity) == 0",
+              "value": "middle"
+            },
+            {
+              "value": "bottom"
+            }
+          ],
+          "fill": {
+            "value": "black"
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fontSize": {
+            "value": 10
+          },
+          "lineBreak": {
+            "value": "\\n"
+          }
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line",
+      "from": {
+        "data": "radial-grid"
+      },
+      "encode": {
+        "enter": {
+          "interpolate": {
+            "value": "linear-closed"
+          },
+          "x": {
+            "field": "x2"
+          },
+          "y": {
+            "field": "y2"
+          },
+          "stroke": {
+            "value": "lightgray"
+          },
+          "strokeWidth": {
+            "value": 1
+          }
+        }
+      }
+    }
+  ]
+}

@@ -2,7 +2,9 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "#FCFAEE",
   "title": {
-    "text": ["Top 5 Food and Beverage Companies"],
+    "text": [
+      "Top 5 Food and Beverage Companies"
+    ],
     "fontSize": 16,
     "anchor": "start",
     "dy": -25,
@@ -13,23 +15,51 @@
   "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/rank.csv",
-    "format": {"type": "csv"}
+    "format": {
+      "type": "csv"
+    }
   },
   "transform": [
-    {"filter": "datum.Rank <= 5"}
+    {
+      "filter": "datum.Rank <= 5"
+    }
   ],
   "encoding": {
     "x": {
       "field": "Year",
       "type": "ordinal",
-      "axis": {"labelAngle": 0, "title": "Year", "values": ["2020", "2021", "2022", "2023", "2024"]}
+      "axis": {
+        "labelAngle": 0,
+        "title": "Year",
+        "values": [
+          "2020",
+          "2021",
+          "2022",
+          "2023",
+          "2024"
+        ]
+      }
     },
     "y": {
       "field": "Rank",
       "type": "quantitative",
       "sort": "descending",
-      "scale": {"domain": [0.5, 5.5]},
-      "axis": {"title": "Rank", "values": [1, 2, 3, 4, 5]}
+      "scale": {
+        "domain": [
+          0.5,
+          5.5
+        ]
+      },
+      "axis": {
+        "title": "Rank",
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
     }
   },
   "layer": [
@@ -40,8 +70,12 @@
       "selection": {
         "highlight": {
           "type": "multi",
-          "fields": ["Company"],
-          "init": {"Company": "Nestlé"}
+          "fields": [
+            "Company"
+          ],
+          "init": {
+            "Company": "Nestlé"
+          }
         }
       },
       "encoding": {
@@ -61,28 +95,53 @@
           "legend": null
         },
         "opacity": {
-          "condition": {"selection": "highlight", "value": 1},
+          "condition": {
+            "selection": "highlight",
+            "value": 1
+          },
           "value": 0.2
         }
       }
     },
     {
-      "mark": {"type": "image", "width": 45, "height": 45, "cursor": "pointer"},
+      "mark": {
+        "type": "image",
+        "width": 45,
+        "height": 45,
+        "cursor": "pointer"
+      },
       "encoding": {
-        "url": {"field": "img", "type": "nominal"},
+        "url": {
+          "field": "img",
+          "type": "nominal"
+        },
         "tooltip": [
-          {"field": "Company", "type": "nominal"},
-          {"field": "Rank", "type": "quantitative"},
-          {"field": "Year", "type": "ordinal"}
+          {
+            "field": "Company",
+            "type": "nominal"
+          },
+          {
+            "field": "Rank",
+            "type": "quantitative"
+          },
+          {
+            "field": "Year",
+            "type": "ordinal"
+          }
         ],
         "opacity": {
-          "condition": {"selection": "highlight", "value": 1},
+          "condition": {
+            "selection": "highlight",
+            "value": 1
+          },
           "value": 0.2
         }
       }
     }
   ],
   "config": {
-    "view": {"stroke": null}
+    "view": {
+      "stroke": null
+    }
   }
 }

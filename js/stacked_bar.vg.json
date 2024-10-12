@@ -4,7 +4,7 @@
     "height": 250,
     "title": {
         "text": "Number of persons engaged by Certification",
-        "dy": -15,  
+        "dy": -15,
         "font": "open sans"
     },
     "data": {
@@ -45,13 +45,13 @@
             "mark": {
                 "type": "text",
                 "baseline": "middle",
-                "dx": 18    
+                "dx": 18
             },
             "encoding": {
                 "x": {
                     "aggregate": "sum",
                     "field": "no_of_persons",
-                    "stack":"normalize",
+                    "stack": "normalize",
                     "bandPosition": 0.5
                 },
                 "y": {

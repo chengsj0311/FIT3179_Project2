@@ -1,4 +1,4 @@
-body *{
+body * {
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -127,10 +127,11 @@ h1 {
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: row;
-    align-items: center; /* Center align items vertically */
+    align-items: center;
+    /* Center align items vertically */
 }
 
 .card-text-container {
@@ -156,7 +157,8 @@ h1 {
     width: 20%;
     height: auto;
     margin-bottom: 10px;
-    object-fit: contain; /* Maintain aspect ratio */
+    object-fit: contain;
+    /* Maintain aspect ratio */
 }
 
 .justify-container {
@@ -190,7 +192,7 @@ select {
     align-items: center;
     background-color: rgb(243, 231, 215);
     border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .rank-card {
@@ -198,7 +200,8 @@ select {
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center align items vertically */
+    align-items: center;
+    /* Center align items vertically */
     justify-content: center;
     text-align: center;
 }
@@ -207,7 +210,8 @@ select {
     width: 35%;
     height: auto;
     margin-bottom: 10px;
-    object-fit: contain; /* Maintain aspect ratio */
+    object-fit: contain;
+    /* Maintain aspect ratio */
 }
 
 .rank-card-title {
@@ -244,7 +248,7 @@ select {
     color: #000000;
 }
 
-p{
+p {
     color: #383636;
 }
 
@@ -273,19 +277,21 @@ p{
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
-    border-top: 2px solid #b9abab; 
+    border-top: 2px solid #b9abab;
     font-size: 14px;
 }
 
 .footer-section {
-    width: 48%; 
+    width: 48%;
 }
 
 .footer-section a {
-    color: #EB8317; /* Blue color for links */
+    color: #EB8317;
+    /* Blue color for links */
     text-decoration: none;
 }
 
 .footer-section a:hover {
-    text-decoration: underline; /* Underline links on hover for clarity */
+    text-decoration: underline;
+    /* Underline links on hover for clarity */
 }
