@@ -1,11 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#FCFAEE",
   "title": {
     "text": ["Top 5 Food and Beverage Companies"],
     "fontSize": 16,
     "anchor": "start",
-    "font": "open sans",
-    "dy": -25
+    "dy": -25,
+    "font": "DM Serif Display",
+    "color": "#5a5857"
   },
   "width": 650,
   "height": 350,
@@ -48,11 +50,12 @@
           "bandPosition": 0,
           "scale": {
             "range": [
-              "#4e79a7",
-              "#edc948",
-              "#f28e2b",
-              "#c9c776",
-              "#bab0ac"
+              "#ef476f",
+              "#ff7d00",
+              "#ffd166",
+              "#660f56",
+              "#118ab2",
+              "#c8b6ff"
             ]
           },
           "legend": null
@@ -78,5 +81,8 @@
         }
       }
     }
-  ]
+  ],
+  "config": {
+    "view": {"stroke": null}
+  }
 }

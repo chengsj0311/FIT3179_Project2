@@ -9,19 +9,25 @@ body *{
 
 h1 {
     font-weight: 900;
+    font-family: 'DM Serif Display', serif;
+    font-size: 50px;
+    color: #000000;
 }
 
 h2 {
     font-weight: 700;
+    font-size: 35px;
+    font-family: 'DM Serif Display', serif;
+    color: #5a5857;
 }
 
 body {
-    background-color: lightgray;
+    background-color: rgb(192, 188, 179);
 }
 
 .page {
     width: 850px;
-    background-color:#ffffff;
+    background-color: #FCFAEE;
     margin: auto;
     padding: 50px;
     padding-top: 35px;
@@ -161,21 +167,18 @@ h1 {
 }
 
 .food {
-    color: #1f77b4;
+    color: #0065b3;
     font-weight: bold;
-    font-style: italic;
 }
 
 .event {
-    color: #ff7f0e;
+    color: #d71827;
     font-weight: bold;
-    font-style: italic;
 }
 
 .beverage {
-    color: #2ca02c;
+    color: #fbbb29;
     font-weight: bold;
-    font-style: italic;
 }
 
 select {
@@ -187,8 +190,9 @@ select {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-radius: 10px;
-    background-color: rgb(253, 237, 223);
+    background-color: rgb(243, 231, 215);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .rank-card {
@@ -248,4 +252,14 @@ p{
 
 #bump-chart {
     margin-left: 70px;
+}
+
+.female {
+    color: #e07a5f;
+    font-weight: bold;
+}
+
+.male {
+    color: #4a4e69;
+    font-weight: bold;
 }

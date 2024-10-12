@@ -7,8 +7,10 @@
     "fontSize": 16,
     "dy": -25,
     "dx": -78,
-    "font": "open sans"
+    "font": "DM Serif Display",
+    "color": "#5a5857"
   },
+  "background": "#FCFAEE",
   "width": 400,
   "height": 320,
   "padding": {
@@ -89,9 +91,7 @@
         "field": "Category"
       },
       "range": [
-        "#1f77b4",
-        "#ff7f0e",
-        "#2ca02c"
+        "#0065b3"
       ]
     }
   ],

@@ -6,9 +6,11 @@
         ],
         "fontSize": 16,
         "fontWeight": "bold",
-        "font": "open sans",
+        "font": "DM Serif Display",
+        "color": "#5a5857",
         "anchor": "start"
     },
+    "background": "#FCFAEE",
     "width": 830,
     "height": 400,
     "params": [

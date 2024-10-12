@@ -3,15 +3,18 @@
     "data": {
         "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/cert.csv"
     },
+    "background": "#FCFAEE",
     "width": 500,
     "height": 200,
     "title": {
         "text": "Worker Certification Percentages Across Various Activities",
         "fontSize": 16,
         "fontWeight": "bold",
-        "font": "open sans",
         "dy": -25,
-        "anchor": "start"
+        "anchor": "start",
+        "font": "DM Serif Display",
+        "color": "#5a5857"
+
     },
     "config": {
         "view": {

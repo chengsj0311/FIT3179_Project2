@@ -1,6 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "padding": 0,
+    "background": "#FCFAEE",
     "hconcat": [
         {
             "width": 300,
@@ -10,7 +11,8 @@
                 "dy": -25,
                 "fontSize": 16,
                 "anchor": "start",
-                "font": "open sans"
+                "font": "DM Serif Display",
+                "color": "#5a5857"
             },
             "data": {
                 "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/no_of_persons_by_cert.csv"
@@ -212,7 +214,9 @@
                 "text": "Number of persons engaged by Certification",
                 "fontSize": 16,
                 "dy": -25,
-                "anchor": "start"
+                "anchor": "start",
+                "font": "DM Serif Display",
+                "color": "#5a5857"
             },
             "data": {
                 "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/no_of_persons_by_cert.csv"
@@ -244,6 +248,12 @@
                         "color": {
                             "field": "Gender",
                             "sort": "descending",
+                            "scale": {
+                                "range": [
+                                    "#e07a5f",
+                                    "#4a4e69"
+                                ]
+                            },
                             "legend": null
                         },
                         "tooltip": [
