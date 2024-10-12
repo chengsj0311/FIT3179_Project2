@@ -2,11 +2,6 @@ body *{
     font-family: 'Open Sans', sans-serif;
 }
 
-.footer-container {
-    width: 950px;
-    margin: auto;
-}
-
 h1 {
     font-weight: 900;
     font-family: 'DM Serif Display', serif;
@@ -26,9 +21,12 @@ body {
 }
 
 .page {
+    margin-top: 5px;
     width: 850px;
     background-color: #FCFAEE;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
     padding: 50px;
     padding-top: 35px;
 }
@@ -262,4 +260,32 @@ p{
 .male {
     color: #4a4e69;
     font-weight: bold;
+}
+
+.footer-container {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FCFAEE;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid #b9abab; 
+    font-size: 14px;
+}
+
+.footer-section {
+    width: 48%; 
+}
+
+.footer-section a {
+    color: #EB8317; /* Blue color for links */
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline; /* Underline links on hover for clarity */
 }
