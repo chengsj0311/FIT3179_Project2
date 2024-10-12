@@ -45,7 +45,7 @@ h1 {
 }
 
 .pure-g {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .small-font {
@@ -117,8 +117,8 @@ h1 {
 }
 
 .card {
-    width: 160px;
-    height: 60px;
+    width: 140px;
+    height: 50px;
     background-color: rgb(243, 231, 215);
     padding: 20px;
     margin-bottom: 20px;
@@ -135,7 +135,7 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 70%;
+    width: 80%;
 }
 
 .card-title {
@@ -149,7 +149,7 @@ h1 {
 }
 
 .card-img {
-    width: 30%;
+    width: 20%;
     height: auto;
     margin-bottom: 10px;
     object-fit: contain; /* Maintain aspect ratio */
@@ -163,16 +163,19 @@ h1 {
 .food {
     color: #1f77b4;
     font-weight: bold;
+    font-style: italic;
 }
 
 .event {
     color: #ff7f0e;
     font-weight: bold;
+    font-style: italic;
 }
 
 .beverage {
     color: #2ca02c;
     font-weight: bold;
+    font-style: italic;
 }
 
 select {
@@ -184,12 +187,13 @@ select {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    background-color: rgb(253, 237, 223);
 }
 
 .rank-card {
     width: 160px;
     height: auto;
-    background-color: rgb(245, 226, 209);
     display: flex;
     flex-direction: column;
     align-items: center; /* Center align items vertically */
@@ -198,7 +202,7 @@ select {
 }
 
 .rank-card-img {
-    width: 50%;
+    width: 35%;
     height: auto;
     margin-bottom: 10px;
     object-fit: contain; /* Maintain aspect ratio */
@@ -217,5 +221,31 @@ select {
 }
 
 .text {
-    line-height: 25px;
+    line-height: 26px;
+}
+
+#heatmap {
+    margin-bottom: 50px;
+    margin-left: 75px;
+}
+
+.rank-title {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.key-word {
+    font-weight: bold;
+    font-style: italic;
+    color: #000000;
+}
+
+p{
+    color: #383636;
+}
+
+#bump-chart {
+    margin-left: 70px;
 }

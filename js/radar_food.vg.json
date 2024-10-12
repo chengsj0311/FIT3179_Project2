@@ -2,13 +2,11 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "title": {
     "text": [
-      "Calculated Average Grow Rate of",
-      "Food Services"
+      "Calculated Average Grow Rate of Food Services"
     ],
-    "dy": -15,
-    "dx": -30,
-    "orient": "top",
-    "fontSize": 18,
+    "fontSize": 16,
+    "dy": -25,
+    "dx": -78,
     "font": "open sans"
   },
   "width": 400,
@@ -17,7 +15,7 @@
     "top": 80,
     "left": 100,
     "bottom": 100,
-    "right": 80
+    "right": 60
   },
   "autosize": {
     "type": "none",

@@ -2,18 +2,13 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": ["Top 5 Food and Beverage Companies"],
-    "fontSize": 18,
+    "fontSize": 16,
+    "anchor": "start",
     "font": "open sans",
-    "dy": -15
+    "dy": -25
   },
-  "padding": {
-    "left": 0,
-    "top": 25,
-    "right": 0,
-    "bottom": 0
-  },
-  "width": 360,
-  "height": 250,
+  "width": 650,
+  "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/rank.csv",
     "format": {"type": "csv"}
@@ -25,7 +20,6 @@
     "x": {
       "field": "Year",
       "type": "ordinal",
-      "sort": ["2024", "2023", "2022", "2021", "2020"],
       "axis": {"labelAngle": 0, "title": "Year", "values": ["2020", "2021", "2022", "2023", "2024"]}
     },
     "y": {
@@ -39,8 +33,14 @@
   "layer": [
     {
       "mark": {
-        "type": "line",
-        "cursor": "pointer"
+        "type": "line"
+      },
+      "selection": {
+        "highlight": {
+          "type": "multi",
+          "fields": ["Company"],
+          "init": {"Company": "Nestlé"}
+        }
       },
       "encoding": {
         "color": {
@@ -57,17 +57,25 @@
           },
           "legend": null
         },
+        "opacity": {
+          "condition": {"selection": "highlight", "value": 1},
+          "value": 0.2
+        }
+      }
+    },
+    {
+      "mark": {"type": "image", "width": 45, "height": 45, "cursor": "pointer"},
+      "encoding": {
+        "url": {"field": "img", "type": "nominal"},
         "tooltip": [
           {"field": "Company", "type": "nominal"},
           {"field": "Rank", "type": "quantitative"},
           {"field": "Year", "type": "ordinal"}
-        ]
-      }
-    },
-    {
-      "mark": {"type": "image", "width": 35, "height": 35},
-      "encoding": {
-        "url": {"field": "img", "type": "nominal"}
+        ],
+        "opacity": {
+          "condition": {"selection": "highlight", "value": 1},
+          "value": 0.2
+        }
       }
     }
   ]

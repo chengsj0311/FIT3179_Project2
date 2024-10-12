@@ -4,7 +4,7 @@
         "text": [
             "Calculated Annual Growth Rate (CAGR) of Number of Establishments from 2015 to 2022 by State"
         ],
-        "fontSize": 18,
+        "fontSize": 16,
         "fontWeight": "bold",
         "font": "open sans",
         "anchor": "start"
@@ -150,8 +150,7 @@
                         "labelLimit": 500,
                         "gradientLength": 200,
                         "titleLimit": 300,
-                        "titleFontSize": 14,
-                        "labelFontWeight": "bold"
+                        "titleFontSize": 14
                     }
                 },
                 "tooltip": [
@@ -173,9 +172,36 @@
                     {
                         "field": "CAGR_Percentage",
                         "type": "quantitative",
-                        "title": "Calculated Annual Growth Rate"
+                        "title": "Calculated Annual Growth Rate (%)"
                     }
                 ]
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {
+                        "x": 109.796783,
+                        "y": 7.420404
+                    }
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "text": "Due to the impact of COVID-19,\\nthe number of establishments\\ndecreased in 2022 compared to 2015.\\nHowever, the number of establishments\\nin Sabah continued to grow.",
+                "lineBreak": "\\n",
+                "align": "left",
+                "color": "black"
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "x",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "y",
+                    "type": "quantitative"
+                }
             }
         }
     ],

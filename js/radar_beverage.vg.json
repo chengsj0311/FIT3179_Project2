@@ -1,13 +1,12 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
     "title": {
-      "text": ["Calculated Average Grow Rate of", "Event Catering Services"],
-      "dy": -15,
-      "dx": -30,
-      "orient": "top",
-      "fontSize": 18,
+      "text": ["Calculated Average Grow Rate of Beverage Services"],
+      "fontSize": 16,
+      "dy": -25,
+      "dx": -48,
       "font": "open sans"
-    },
+  },
     "width": 400,
     "height": 320,
     "padding": {

@@ -58,7 +58,11 @@
                     "field": "Gender",
                     "type": "nominal",
                     "legend": null
-                }
+                },
+                "tooltip": [
+                    {"field": "Gender", "type": "nominal", "title": "Gender"},
+                    {"field": "total_persons_by_gender", "type": "quantitative", "title": "Total Persons"}
+                ]
             }
         },
         {

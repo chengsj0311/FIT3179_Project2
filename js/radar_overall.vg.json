@@ -2,10 +2,9 @@
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "title": {
     "text": ["Calculated Average Grow Rate by Activity"],
-    "dy": -15,
-    "dx": -30,
-    "orient": "top",
-    "fontSize": 18,
+    "fontSize": 16,
+    "dy": -25,
+    "dx": -84,
     "font": "open sans"
   },
   "width": 400,

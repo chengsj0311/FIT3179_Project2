@@ -1,0 +1,72 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/chengsj0311/FIT3179_Project2/refs/heads/main/data/cert.csv"
+    },
+    "width": 500,
+    "height": 200,
+    "title": {
+        "text": "Worker Certification Percentages Across Various Activities",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "font": "open sans",
+        "dy": -25,
+        "anchor": "start"
+    },
+    "config": {
+        "view": {
+            "strokeWidth": 0,
+            "step": 50
+        },
+        "axis": {
+            "domain": false
+        }
+    },
+    "mark": "rect",
+    "encoding": {
+        "x": {
+            "field": "Certification",
+            "type": "nominal",
+            "axis": {
+                "labelAngle": 0,
+                "labelPadding" : 10
+            }
+        },
+        "y": {
+            "field": "Activity",
+            "type": "nominal",
+            "axis": {
+                "labelPadding" : 10,
+                "labelLimit": 55
+            }
+        },
+        "color": {
+            "field": "Percentage",
+            "aggregate": "max",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "warmgreys"
+            },
+            "legend": {
+                "title": null
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Activity",
+                "type": "nominal",
+                "title": "Activity"
+            },
+            {
+                "field": "Certification",
+                "type": "nominal",
+                "title": "Certification"
+            },
+            {
+                "field": "Percentage",
+                "type": "quantitative",
+                "title": "Percentage"
+            }
+        ]
+    }
+  }
