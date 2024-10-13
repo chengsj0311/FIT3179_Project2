@@ -57,7 +57,7 @@
         }
     ],
     "projection": {
-        "type": "mercator",
+        "type": "equirectangular",
         "center": {
             "expr": "center_to"
         },
