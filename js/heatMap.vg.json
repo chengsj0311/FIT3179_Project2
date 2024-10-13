@@ -21,7 +21,8 @@
             "step": 50
         },
         "axis": {
-            "domain": false
+            "domain": false,
+            "titleFont": "Open Sans"
         }
     },
     "mark": "rect",

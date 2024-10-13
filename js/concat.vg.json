@@ -236,7 +236,8 @@
                         "y": {
                             "field": "certificate",
                             "type": "nominal",
-                            "sort": "-x"
+                            "sort": "-x",
+                            "title": "Certification"
                         },
                         "opacity": {
                             "condition": {
